@@ -1,0 +1,104 @@
+{% load staticfiles %}
+{% load i18n %}
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include 'includes/header_js_and_css.html' %}
+
+</head>
+
+
+<body id="top">
+
+    <!-- header
+    ================================================== -->
+    {% include 'includes/header.html' %}
+
+
+    <!-- page header
+    ================================================== -->
+    <section id="home" class="s-home page-hero target-section"
+             data-parallax="scroll"
+             data-image-src="{% static 'images/hero-bg4.jpg' %}"
+             data-natural-width=3000
+             data-natural-height=2000
+             data-position-y=center>
+
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
+
+        <div class="home-content">
+
+            <div class="row home-content__main">
+
+
+                <h1>{% trans 'С возвращением. <br>Мы рады, что Вы <br>снова с нами' %}</h1>
+
+                {% include 'includes/scroll_down.html' %}
+
+            </div>
+
+        </div> <!-- end home-content -->
+
+        {% include 'includes/socials_header.html' %}
+
+    </section> <!-- end s-home -->
+
+
+    <!-- blog
+    ================================================== -->
+    <section id="blog" class="blog-content-wrap">
+
+        <div class="row blog-content">
+            <div class="col-full">               
+
+                <div class="col-six col-full">
+
+                <h3>{% trans 'Вход на сайт HiNative' %}</h3>
+
+                    {% block content %}{% endblock %}
+
+                </div>
+
+            </div> <!-- end col-full -->
+        </div> <!-- end blog-content -->
+
+    </section> <!-- end blog-content-wrap -->
+
+
+    <!-- Footer
+    ================================================== -->
+    {% include 'includes/footer.html' %}
+
+
+    <div id="preloader"> 
+        <div id="loader"></div>
+    </div>
+
+    {% include 'includes/modal_window_language.html' %}
+
+
+    <!-- Java Script
+    ================================================== -->
+    {% include 'includes/footer_js.html' %}
+
+</body>
+
+</html>

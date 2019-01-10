@@ -1,0 +1,61 @@
+{% extends 'blog.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}{% trans 'Вопросы | HiNative' %}{% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+        <article class="col-block">
+
+            <div class="blog-date">
+                <a href="{{ post.date.year }}-{{ post.date.month }}-{{ post.date.day }}">{{ post.date }}</a>
+            </div>
+
+            <h2 class="h01"><a href="{{ post.language.slug }}/{{ post.id }}">{{ post.title }}</a></h2>
+            <p>{{ post.body|truncatewords:50 }}</p>
+
+            <div class="blog-cat">
+                <a href="{{ post.language.slug }}">{{ post.language.get_lang_display }}</a>
+            </div>
+
+        </article>
+    {% endfor %}
+
+    {% include 'blog/paginator.html' %}
+{% endblock %}
+
+
+{% block single_header_post %}
+    {% if post_img.image %}
+        <section class="page-header page-hero"
+             style="background-image:url({{ post_img.image.url }})">
+    {% else %}
+        <section class="page-header page-hero"
+             style="background-image:url({% static 'images/blog-bg-03.jpg' %})">
+    {% endif %}
+        <div class="row page-header__content">
+            <article class="col-full">
+
+                <div class="page-header__info">
+                    <div class="page-header__cat">
+                        <a href="{{ single_header_post.language.slug }}">{{ single_header_post.language.get_lang_display }}</a>
+                    </div>
+                    <div class="page-header__date">
+                        {{ single_header_post.date }}
+                    </div>
+                </div>
+
+                <h1 class="page-header__title">
+                    <a href="{{ single_header_post.language.slug }}/{{ single_header_post.id }}" title="{{ single_header_post.title }}">
+                        {{ single_header_post.title|truncatewords:5 }}
+                    </a>
+                </h1>
+                <p>{{ single_header_post.body|truncatewords:50 }}</p>
+                <p>
+                    <a href="{{ single_header_post.language.slug }}/{{ single_header_post.id }}" class="btn btn--stroke page-header__btn">{% trans 'Больше' %}</a>
+                </p>
+            </article>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS
+    ================================================== -->
+    {% include 'includes/header_js_and_css.html' %}
+
+</head>
+
+
+<body id="top">
+
+    <!-- header
+    ================================================== -->
+    {% include 'includes/header.html' %}
+
+
+    <!-- page header
+    ================================================== -->
+
+        {% block single_header_post %}{% endblock %}
+
+    <!-- blog
+    ================================================== -->
+    <section class="blog-content-wrap">
+
+        <div class="row blog-content">
+            <div class="col-full">
+
+                {% include 'includes/filters.html' %}
+
+                <div class="blog-list block-1-2 block-tab-full">
+
+                    {% block content %}{% endblock %}
+
+                </div> <!-- end blog-list -->
+
+            </div> <!-- end col-full -->
+        </div> <!-- end blog-content -->
+
+    </section> <!-- end blog-content-wrap -->
+
+
+    <!-- footer
+    ================================================== -->
+    {% include 'includes/footer.html' %}
+
+
+    <div id="preloader"> 
+        <div id="loader"></div>
+    </div>
+
+    {% include 'includes/modal_window_language.html' %}
+
+
+    <!-- Java Script
+    ================================================== -->
+    {% include 'includes/footer_js.html' %}
+
+</body>
+
+</html>

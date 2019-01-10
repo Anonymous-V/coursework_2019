@@ -1,0 +1,313 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-09 11:32+0300\n"
+"PO-Revision-Date: 2019-01-07 18:25+0000\n"
+"Last-Translator: b'Anonym  <anonym@gmail.com>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.0\n"
+
+#: .\account\forms.py:7 .\account\forms.py:32
+msgid "Логин на сайте"
+msgstr ""
+
+#: .\account\forms.py:8
+msgid "Введите Ваш логин"
+msgstr ""
+
+#: .\account\forms.py:11 .\account\forms.py:19
+msgid "Пароль для входа"
+msgstr ""
+
+#: .\account\forms.py:12
+msgid "Введите Ваш пароль"
+msgstr ""
+
+#: .\account\forms.py:20
+msgid "Придумайте пароль не менее 6 символов"
+msgstr ""
+
+#: .\account\forms.py:23
+msgid "Повторите пароль"
+msgstr ""
+
+#: .\account\forms.py:24
+msgid "Повторите пароль записанный выше"
+msgstr ""
+
+#: .\account\forms.py:33
+msgid "Как Вас зовут?"
+msgstr ""
+
+#: .\account\forms.py:34
+msgid "Ваш Email"
+msgstr ""
+
+#: .\account\forms.py:45
+msgid "Иванов Иван Иванович"
+msgstr ""
+
+#: .\account\forms.py:66
+msgid "Ваша фотография (необязательно)"
+msgstr ""
+
+#: .\account\templates\registration\logged_out.html:5
+#: .\account\templates\registration\logged_out.html:8
+msgid "Выход"
+msgstr ""
+
+#: .\account\templates\registration\logged_out.html:9
+msgid "Вы успешно вышли из системы"
+msgstr ""
+
+#: .\account\templates\registration\login.html:4
+msgid "Вход в свой аккаунт HiNative"
+msgstr ""
+
+#: .\account\templates\registration\login.html:10
+#: .\templates\includes\header.html:23 .\templates\includes\header.html:41
+#: .\templates\index.html:227
+msgid "Войти"
+msgstr ""
+
+#: .\account\templates\registration\register.html:4
+msgid "Регистрация | HiNative"
+msgstr ""
+
+#: .\account\templates\registration\register.html:11 .\templates\index.html:228
+msgid "Зарегистрироваться"
+msgstr ""
+
+#: .\account\templates\registration\register_done.html:5
+msgid "Регистрация успешна"
+msgstr ""
+
+#: .\account\templates\registration\register_done.html:10
+msgid "Добро пожаловать"
+msgstr ""
+
+#: .\account\templates\registration\register_done.html:11
+msgid "Ваш аккаунт был успешно создан"
+msgstr ""
+
+#: .\account\templates\registration\register_done.html:12
+msgid "Авторизируйтесь"
+msgstr ""
+
+#: .\blog\forms.py:13
+msgid "Комментарий к вопросу"
+msgstr ""
+
+#: .\blog\forms.py:14
+msgid "Аудиофайл"
+msgstr ""
+
+#: .\blog\forms.py:19
+msgid "Ваш комментарий"
+msgstr ""
+
+#: .\blog\templates\blog\all_posts.html:5
+msgid "Вопросы | HiNative"
+msgstr ""
+
+#: .\blog\templates\blog\all_posts.html:56
+msgid "Больше"
+msgstr ""
+
+#: .\blog\templates\blog\single_question.html:31
+msgid "от"
+msgstr ""
+
+#: .\blog\templates\blog\single_question.html:60
+msgid "Ваш браузер не поддерживает аудио"
+msgstr ""
+
+#: .\blog\templates\blog\single_question.html:76
+msgid "Предыдущий вопрос"
+msgstr ""
+
+#: .\blog\templates\blog\single_question.html:85
+msgid "Следующий вопрос"
+msgstr ""
+
+#: .\blog\templates\blog\single_question.html:95
+msgid "Другие вопросы"
+msgstr ""
+
+#: .\blog\templates\blog\single_question.html:104
+msgid "Добавить комментарий"
+msgstr ""
+
+#: .\blog\templates\blog\single_question.html:109
+msgid "Отправить"
+msgstr ""
+
+#: .\blog\templates\blog\single_question.html:151
+msgid "Пока еще никто не прокомментировал этот вопрос"
+msgstr ""
+
+#: .\question\forms.py:12
+msgid "Название вопроса"
+msgstr ""
+
+#: .\question\forms.py:13 .\templates\includes\modal_window_language.html:10
+msgid "Выберите язык"
+msgstr ""
+
+#: .\question\forms.py:14
+msgid "Текст вопроса"
+msgstr ""
+
+#: .\question\forms.py:15
+msgid "Аудио (необязательно)"
+msgstr ""
+
+#: .\question\forms.py:19
+msgid "Введите название вопроса"
+msgstr ""
+
+#: .\question\forms.py:23
+msgid "Введите текст вопроса"
+msgstr ""
+
+#: .\question\templates\question\add_question.html:5
+msgid "Новый вопрос | HiNative"
+msgstr ""
+
+#: .\question\templates\question\add_question.html:11
+msgid "Создать"
+msgstr ""
+
+#: .\question\templates\question\add_question_success.html:5
+msgid "Вопрос добавлен"
+msgstr ""
+
+#: .\question\templates\question\add_question_success.html:9
+msgid "Вопрос был успешно добавлен на сайт"
+msgstr ""
+
+#: .\templates\blog-single.html:130
+msgid "Ответы"
+msgstr ""
+
+#: .\templates\includes\filters.html:3
+msgid "Фильтровать"
+msgstr ""
+
+#: .\templates\includes\filters.html:6 .\templates\includes\header.html:16
+#: .\templates\includes\header.html:34 .\templates\index.html:81
+#: .\templates\index.html:195
+msgid "Все вопросы"
+msgstr ""
+
+#: .\templates\includes\filters.html:7
+msgid "Без ответа"
+msgstr ""
+
+#: .\templates\includes\filters.html:8
+msgid "С аудиодорожкой"
+msgstr ""
+
+#: .\templates\includes\header.html:17 .\templates\includes\header.html:35
+msgid "Язык"
+msgstr ""
+
+#: .\templates\includes\header.html:19 .\templates\includes\header.html:37
+msgid "Задать вопрос"
+msgstr ""
+
+#: .\templates\includes\header.html:21 .\templates\includes\header.html:39
+msgid "Выйти"
+msgstr ""
+
+#: .\templates\includes\modal_window_language.html:17
+msgid "Закрыть"
+msgstr ""
+
+#: .\templates\includes\scroll_down.html:4
+msgid "Листай вниз"
+msgstr ""
+
+#: .\templates\index.html:15
+msgid "Главная | HiNative"
+msgstr ""
+
+#: .\templates\index.html:50
+msgid "Привет"
+msgstr ""
+
+#: .\templates\index.html:52
+msgid "Начни изучать <br>иностранный язык <br>вместе с HiNative"
+msgstr ""
+
+#: .\templates\index.html:82
+msgid "Последние заданные вопросы"
+msgstr ""
+
+#: .\templates\index.html:83
+msgid ""
+"Здесь опубликованы последние заданные вопросы наших пользователей. И ты тоже "
+"можешь в этом поучаствовать. Ведь это абсолютно бесплатно! Присоединяйся "
+"скорее."
+msgstr ""
+
+#: .\templates\index.html:214
+msgid "Задай свой вопрос на сайте"
+msgstr ""
+
+#: .\templates\index.html:215
+msgid ""
+"Задайте свой вопрос на сайте HiNative и получите ответ уже в ближайшее время"
+msgstr ""
+
+#: .\templates\index.html:217
+msgid "Перейти"
+msgstr ""
+
+#: .\templates\index.html:220
+msgid "Изучайте вместе с HiNative"
+msgstr ""
+
+#: .\templates\index.html:223
+msgid ""
+"При помощи HiNative вы можете задавать вопросы как о английском, так и о "
+"русском языках, и получать ответы от настоящих их носителей."
+msgstr ""
+
+#: .\templates\question.html:50
+msgid "Задайте свой вопрос <br>на HiNative <br>"
+msgstr ""
+
+#: .\templates\question.html:72
+msgid "Вопрос"
+msgstr ""
+
+#: .\templates\registration.html:52
+msgid "Впервые на HiNative? <br>Зарегистрируйся прямо сейчас <br>"
+msgstr ""
+
+#: .\templates\registration.html:74
+msgid "Регистрация на сайте HiNative"
+msgstr ""
+
+#: .\templates\sign_in.html:52
+msgid "С возвращением. <br>Мы рады, что Вы <br>снова с нами"
+msgstr ""
+
+#: .\templates\sign_in.html:74
+msgid "Вход на сайт HiNative"
+msgstr ""

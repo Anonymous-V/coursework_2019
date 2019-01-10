@@ -1,0 +1,153 @@
+{% extends 'blog-single.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+
+{% block header_content %}
+    {% if post_img.image %}
+        <div class="page-header page-header--single page-hero"
+             style="background-image:url({{ post_img.image.url }}); background-size: cover">
+    {% else %}
+        <div class="page-header page-header--single page-hero"
+             style="background-image:url({% static 'images/default-language-img.jpg' %}); background-size: cover">
+    {% endif %}
+
+
+        <div class="row page-header__content narrow">
+            <article class="col-full">
+                <div class="page-header__info">
+                    <div class="page-header__cat">
+                        <a href="{% url 'all_posts' %}{{ post.language.slug }}">{{ post.language.get_lang_display }}</a>
+                    </div>
+                </div>
+                <h1 class="page-header__title">
+                    {{ post.title }}
+                </h1>
+                <ul class="page-header__meta">
+                    <li class="date">{{ post.date }}</li>
+                    <li class="author">
+                        {% trans 'от' %} <span>{{ post.author.first_name }}</span>
+                    </li>
+                </ul>
+            </article>
+        </div>
+
+    </div> <!-- end page-header -->
+{% endblock %}
+
+
+{% block content %}
+
+    <p style="text-align: center;">
+        <img width="120" height="120"
+             style="border-radius: 50%;
+             margin: 0 auto;
+             display: block"
+             src="{{ post.author.profile.photo.url }}"
+             alt="{{ post.author }}">
+        <span style="font-size: 3rem;">{{ post.author.first_name }}</span>
+    </p>
+
+    <blockquote>
+        <p>{{ post.body }}</p>
+    </blockquote>
+
+    {% if post.audio %}
+        <audio controls class="col-full">
+            <source src="{{ post.audio.url }}">
+            <p>{% trans 'Ваш браузер не поддерживает аудио' %}</p>
+
+            <a href="{{ post.audio.url }}">{{ post.audio.url }}</a>
+        </audio>
+    {% endif %}
+
+{% endblock %}
+
+
+{% block navigation %}
+    <div class="blog-content__pagenav">
+        <div class="blog-content__nav">
+
+            {% if post_pred %}
+                <div class="blog-content__prev">
+                    <a href="{{ post_pred.id }}" rel="prev">
+                        <span>{% trans 'Предыдущий вопрос' %}</span>
+                        {{ post_pred.title|truncatewords:3 }}
+                    </a>
+                </div>
+            {% endif %}
+
+            {% if post_next %}
+                <div class="blog-content__next">
+                    <a href="{{ post_next.id }}" rel="next">
+                        <span>{% trans 'Следующий вопрос' %}</span>
+                        {{ post_next.title|truncatewords:3 }}
+                    </a>
+                </div>
+            {% endif %}
+
+        </div>
+
+        <div class="blog-content__all">
+            <a href="{% url 'all_posts' %}" class="btn btn--primary">
+                {% trans 'Другие вопросы' %}
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block comment_form %}
+    <div class="respond">
+        <h3>{% trans 'Добавить комментарий' %}</h3>
+        <form method="post" action="" enctype="multipart/form-data">
+            {{ comment_form }}
+            {% csrf_token %}
+
+            <button type="submit" class="submit btn--primary">{% trans 'Отправить' %}</button>
+        </form> <!-- Form End -->
+    </div> <!-- Respond End -->
+{% endblock %}
+
+
+{% block comments %}
+    {% if posts %}
+        <ol class="commentlist">
+           {% for comment in posts %}
+               <li class="depth-1 comment">
+
+                   <div class="comment__avatar">
+                       <img width="50" height="50" class="avatar" src="{{ comment.author.profile.photo.url }}" alt="">
+                   </div>
+
+                   <div class="comment__content">
+                       <div class="comment__info">
+                           <cite>{{ comment.author.first_name }}</cite>
+
+                           <div class="comment__meta">
+                               <time class="comment__time">{{ comment.created|date:'M d, o @ G:i' }}{% comment %}Sep 16, 2017 @ 23:05{% endcomment %}</time>
+                           </div>
+                       </div>
+
+                       <div class="comment__text">
+                           <p>{{ comment.message }}
+                               {% if comment.audio %}
+                                   <audio controls class="col-full">
+                                       <source src="{{ comment.audio.url }}">
+                                   </audio>
+                               {% endif %}
+                           </p>
+                       </div>
+
+                   </div>
+               </li>
+            {% endfor %}
+        </ol>
+        {% include 'blog/paginator.html' %}
+    {% else %}
+        <p>{% trans 'Пока еще никто не прокомментировал этот вопрос' %}</p>
+    {% endif %}
+
+{% endblock %}

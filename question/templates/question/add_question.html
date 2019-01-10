@@ -1,0 +1,13 @@
+{% extends 'question.html' %}
+{% load i18n %}
+{% load wrap_div %}
+
+{% block title %}{% trans 'Новый вопрос | HiNative' %}{% endblock %}
+
+{% block content %}
+    <form action="." method="post" enctype="multipart/form-data">
+        {{ form|wrap_div|safe }}
+        {% csrf_token %}
+        <input class="btn--primary" type="submit" value="{% trans 'Создать' %}">
+    </form>
+{% endblock %}

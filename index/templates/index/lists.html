@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% load i18n %}
+
+{% block content %}
+    {% for post in posts %}
+        <article class="col-block">
+            <div class="blog-date">
+                <a href="{% url 'date_posts' post.date.year post.date.month post.date.day %}">{{ post.date }}</a>
+            </div>
+            <h2 class="h01"><a href="{% url 'single_post' post.language.slug post.id %}">{{ post.title }}</a></h2>
+            <p>{{ post.body|truncatewords:40 }}</p>
+
+            <div class="blog-cat">
+                <a href="{% url 'all_posts' %}{{ post.language.slug }}">{{ post.language.get_lang_display }}</a>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock %}
+
+
+{% block register_or_question %}
+    {% if request.user.is_authenticated %}
+        <h2 class="h01">{% trans 'Задай свой вопрос на сайте' %}</h2>
+        <p class="lead">{% trans 'Задайте свой вопрос на сайте HiNative и получите ответ уже в ближайшее время' %}</p>
+        <div class="cta__action">
+            <a href="{% url 'question' %}" class="btn btn--primary btn--large">{% trans 'Перейти' %}</a>
+        </div>
+    {% else %}
+        <h2 class="h01"><a href="#">{% trans 'Изучайте вместе с HiNative' %}</a></h2>
+
+        <p class="lead">
+            {% trans 'При помощи HiNative вы можете задавать вопросы как о английском, так и о русском языках, и получать ответы от настоящих их носителей.' %}
+        </p>
+
+        <div class="cta__action">
+            <a class="btn btn--primary btn--large" href="{% url 'login' %}">{% trans 'Войти' %}</a>
+            <a class="btn btn--large" href="{% url 'registration' %}">{% trans 'Зарегистрироваться' %}</a>
+        </div>
+    {% endif %}
+{% endblock %}

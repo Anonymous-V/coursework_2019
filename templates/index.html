@@ -1,0 +1,172 @@
+{% load staticfiles %}
+{% load i18n %}
+<!DOCTYPE html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>{% trans 'Главная | HiNative' %}</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% include 'includes/header_js_and_css.html' %}
+
+</head>
+
+<body id="top">
+
+    <!-- header
+    ================================================== -->
+    {% include 'includes/header.html' %}
+
+
+   <!-- home
+   ================================================== -->
+   <section id="home" class="s-home page-hero target-section"
+            data-parallax="scroll"
+            data-image-src="{% static 'images/hero-bg.jpg' %}"
+            data-natural-width=3000
+            data-natural-height=2000
+            data-position-y=center>
+
+        <div class="overlay"></div>
+        <div class="shadow-overlay"></div>
+
+        <div class="home-content">
+
+            <div class="row home-content__main">
+
+                <h3>{% trans 'Привет' %}</h3>
+
+                <h1>{% trans 'Начни изучать <br>иностранный язык <br>вместе с HiNative' %}</h1>
+
+                {% include 'includes/scroll_down.html' %}
+
+            </div>
+
+        </div> <!-- end home-content -->
+
+        {% include 'includes/socials_header.html' %}
+
+    </section> <!-- end s-home -->
+
+
+    
+    <!-- blog
+    ================================================== -->
+    <section id="blog" class="s-blog target-section">
+
+        <div class="row narrow section-intro has-bottom-sep">
+            <div class="col-full">
+                <h3>{% trans 'Все вопросы' %}</h3>
+                <h1>{% trans 'Последние заданные вопросы' %}</h1>
+                <p class="lead">{% trans 'Здесь опубликованы последние заданные вопросы наших пользователей. И ты тоже можешь в этом поучаствовать. Ведь это абсолютно бесплатно! Присоединяйся скорее.' %}
+                </p>
+            </div>
+        </div>
+
+        <div class="row blog-content">
+            <div class="col-full">
+
+                <div class="blog-list block-1-2 block-tab-full">
+
+                    {% block content %}{% endblock %}
+
+                </div> <!-- end blog-list -->
+                
+
+
+                <div class="cta__action text-center col-twelve tab-full">
+                    <a class="btn btn--stroke btn--large" href="{% url 'all_posts' %}">{% trans 'Все вопросы' %}</a>
+                </div>
+
+            </div> <!-- end col-full -->
+        </div> <!-- end blog-content -->
+
+    </section> <!-- end s-blog -->
+
+
+    <!-- s-cta
+    ================================================== -->
+    <section id="works" class="s-works target-section">
+        
+        <div class="row narrow cta">
+
+            <div class="col-full cta__content">
+                
+                {% block register_or_question %}{% endblock %}
+
+            </div>
+
+        </div> <!-- end cta -->
+        
+    </section>
+
+
+    {% include 'includes/footer.html' %}
+
+
+    <!-- photoswipe background
+    ================================================== -->
+    <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button> <button class="pswp__button pswp__button--share" title=
+                    "Share"></button> <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button> <button class="pswp__button pswp__button--zoom" title=
+                    "Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button> <button class="pswp__button pswp__button--arrow--right" title=
+                "Next (arrow right)"></button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+
+        </div>
+
+    </div><!-- end photoSwipe background -->
+
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+    {% include 'includes/modal_window_language.html' %}
+
+
+    <!-- Java Script
+    ================================================== -->
+    {% include 'includes/footer_js.html' %}
+
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{% extends 'sign_in.html' %}
+{% load i18n %}
+
+{% block title %}{% trans 'Вход в свой аккаунт HiNative' %}{% endblock %}
+
+{% block content %}
+    <form action="." method="post">
+        {{ form }}
+        {% csrf_token %}
+        <input class="btn--primary" type="submit" value="{% trans 'Войти' %}">
+    </form>
+{% endblock %}

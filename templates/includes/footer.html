@@ -1,0 +1,35 @@
+{% load staticfiles %}
+
+<!-- footer
+    ================================================== -->
+<footer>
+    <div class="row">
+        <div class="col-full">
+
+            <div class="footer-logo">
+                <a class="footer-site-logo smoothscroll" href="#top">
+                    <img src="{% static 'images/logo.png' %}" alt="Homepage">
+                </a>
+            </div>
+            {% include 'includes/socials_footer.html' %}
+
+        </div>
+    </div>
+
+    <div class="row footer-bottom">
+
+        <div class="col-twelve">
+            <div class="copyright">
+                <span>© Copyright HiNative 2018</span>
+            </div>
+
+            <div class="go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top">
+                    <i class="im im-arrow-up" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+    </div> <!-- end footer-bottom -->
+
+</footer> <!-- end footer -->

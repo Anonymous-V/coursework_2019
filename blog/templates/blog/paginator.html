@@ -1,0 +1,23 @@
+<div class="row blog-entries-nav">
+    <div class="col-full">
+        {% if posts.has_previous %}
+            <a href="?page={{ posts.previous_page_number }}" class="btn btn--stroke">
+                <i class="im im-arrow-left"></i>
+                Prev
+            </a>
+        {% endif %}
+        {% if page_count > 1 %}
+            <span class="blog-cat">
+                Page {{ posts.number }} of {{ posts.paginator.num_pages }}
+            </span>
+        {% endif %}
+
+        {% if posts.has_next %}
+             <a href="?page={{ posts.next_page_number }}" class="btn--next btn btn--stroke">
+                Next
+                <i class="im im-arrow-right"></i>
+            </a>
+        {% endif %}
+
+    </div>
+</div>

@@ -1,0 +1,13 @@
+{% extends "registration.html" %}
+{% load i18n %}
+
+{% block title %}{% trans 'Регистрация | HiNative' %}{% endblock %}
+
+{% block content %}
+    <form action="." method="post" enctype="multipart/form-data">
+        {{ user_form }}
+        {{ new_profile }}
+        {% csrf_token %}
+        <p><input class="btn--primary" type="submit" value="{% trans 'Зарегистрироваться' %}"></p>
+    </form>
+{% endblock %}

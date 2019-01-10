@@ -1,0 +1,51 @@
+{% load staticfiles %}
+{% load i18n %}
+
+{% url 'index_page' as index_p %}
+
+<header class="s-header">
+
+    {% if request.path_info == index_p %}
+        <div class="header-logo">
+            <a class="site-logo smoothscroll" href="{% url 'index_page' %}#home">
+                <img src="{% static 'images/logo.png' %}" alt="Homepage">
+            </a>
+        </div>
+
+        <nav class="header-nav-wrap">
+            <ul class="header-nav">
+                <li><a class="smoothscroll" href="{% url 'index_page' %}#blog" title="blog">{% trans 'Все вопросы' %}</a></li>
+                <li><a data-dialog="somedialog" class="trigger" href="#">{% trans 'Язык' %}</a></li>
+                {% if request.user.is_authenticated %}
+                    <li><a class="smoothscroll" href="{% url 'index_page' %}#works" title="works">{% trans 'Задать вопрос' %}</a></li>
+                    <li><a class="smoothscroll" href="#">{{ request.user.username }}</a></li>
+                    <li><a href="{% url 'logout' %}">{% trans 'Выйти' %}</a></li>
+                {% else %}
+                    <li><a class="smoothscroll" href="{% url 'index_page' %}#works" title="works">{% trans 'Войти' %}</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% else %}
+        <div class="header-logo">
+            <a class="site-logo" href="{% url 'index_page' %}#home">
+                <img src="{% static 'images/logo.png' %}" alt="Homepage">
+            </a>
+        </div>
+
+        <nav class="header-nav-wrap">
+            <ul class="header-nav">
+                <li><a href="{% url 'index_page' %}#blog" title="blog">{% trans 'Все вопросы' %}</a></li>
+                <li><a data-dialog="somedialog" class="trigger" href="#">{% trans 'Язык' %}</a></li>
+                {% if request.user.is_authenticated %}
+                    <li><a href="{% url 'index_page' %}#works" title="works">{% trans 'Задать вопрос' %}</a></li>
+                    <li><a class="smoothscroll" href="#">{{ request.user.username }}</a></li>
+                    <li><a href="{% url 'logout' %}">{% trans 'Выйти' %}</a></li>
+                {% else %}
+                    <li><a href="{% url 'index_page' %}#works" title="works">{% trans 'Войти' %}</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    {% endif %}
+    <a class="header-menu-toggle" href="{% url 'index_page' %}#0"><span>Menu</span></a>
+
+</header> <!-- end s-header -->

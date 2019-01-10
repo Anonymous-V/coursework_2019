@@ -1,0 +1,10 @@
+{% extends "success_page.html" %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}{% trans 'Выход' %}{% endblock %}
+{% block image %}{% static 'images/hero-bg4.jpg' %}{% endblock %}
+{% block content %}
+    <h1>{% trans 'Выход' %}</h1>
+    <p>{% trans 'Вы успешно вышли из системы' %}</p>
+{% endblock %}
