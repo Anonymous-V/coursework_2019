@@ -9,7 +9,7 @@
         {% csrf_token %}
         <input class="btn--primary" type="submit" value="{% trans 'Войти' %}">
     </form>
-    <p>Еще нет аккаунта? <a href="{% url 'registration' %}">Зарегистрируйтесь</a></p>
+    <p>{% trans 'Еще нет аккаунта?' %} <a href="{% url 'registration' %}">{% trans 'Зарегистрируйтесь' %}</a></p>
 
     {% if messages %}
         {% for message in messages %}

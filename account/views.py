@@ -1,3 +1,4 @@
+from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
@@ -11,7 +12,7 @@ def user_login(request):
     return_page = reverse('index_page')
     if 'next' in request.GET:
         return_page = request.GET.get('next')
-        messages.add_message(request, messages.ERROR, 'Данная страница доступна только<br>авторизированным пользователям.')
+        messages.add_message(request, messages.ERROR, _('Данная страница доступна только<br>авторизированным пользователям'))
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -22,10 +23,10 @@ def user_login(request):
                     login(request, user)
                     return redirect(return_page)
                 else:
-                    return HttpResponse('Disabled account')
+                    return HttpResponse(_('Отключенный аккаунт'))
             else:
                 form = LoginForm(request.POST)
-                form.add_error(None, 'Проверьте правильность введенных Вами данных')
+                form.add_error(None, _('Проверьте правильность введенных Вами данных'))
                 return render(request, 'registration/login.html', {'form': form})
         else:
             form = LoginForm(request.POST)

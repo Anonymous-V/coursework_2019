@@ -1,3 +1,4 @@
+from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.paginator import Paginator
@@ -66,7 +67,7 @@ def single_post(request, lang_slug, post_id):
             new_comment.author = request.user
             new_comment.save()
 
-            messages.add_message(request, messages.SUCCESS, 'Ваш комментарий был успешно добавлен')
+            messages.add_message(request, messages.SUCCESS, _('Ваш комментарий был успешно добавлен'))
 
             all_comments['comment_form'] = comment_form
 
