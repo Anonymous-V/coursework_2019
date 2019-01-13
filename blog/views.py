@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.urls import reverse
+from django.contrib import messages
 from django.core.paginator import Paginator
 from question.models import Question, AvailableLanguage
 from django.contrib.auth.decorators import login_required
@@ -65,6 +65,8 @@ def single_post(request, lang_slug, post_id):
             new_comment.post = post
             new_comment.author = request.user
             new_comment.save()
+
+            messages.add_message(request, messages.SUCCESS, 'Ваш комментарий был успешно добавлен')
 
             all_comments['comment_form'] = comment_form
 

@@ -7,6 +7,7 @@ class Profile(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     photo = ProcessedImageField(upload_to='users/',
                                 blank=True,
+                                null=True,
                                 processors=[ResizeToFill(300, 300)],
                                 format = 'JPEG',
                                 options={'quality': 100})

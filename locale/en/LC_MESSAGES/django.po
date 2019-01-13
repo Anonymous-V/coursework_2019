@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-09 11:32+0300\n"
+"POT-Creation-Date: 2019-01-13 11:39+0300\n"
 "PO-Revision-Date: 2019-01-09 10:35+0000\n"
 "Last-Translator: b'Anonym  <anonym@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,47 +19,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.0\n"
 
-#: .\account\forms.py:7 .\account\forms.py:32
+#: .\account\forms.py:8 .\account\forms.py:33
 msgid "Логин на сайте"
 msgstr "Login to website"
 
-#: .\account\forms.py:8
+#: .\account\forms.py:9
 msgid "Введите Ваш логин"
 msgstr "Enter your login"
 
-#: .\account\forms.py:11 .\account\forms.py:19
+#: .\account\forms.py:12 .\account\forms.py:20
 msgid "Пароль для входа"
 msgstr "Login password"
 
-#: .\account\forms.py:12
+#: .\account\forms.py:13
 msgid "Введите Ваш пароль"
 msgstr "Enter your password"
 
-#: .\account\forms.py:20
+#: .\account\forms.py:21
 msgid "Придумайте пароль не менее 6 символов"
 msgstr "Create a password of at least 6 characters"
 
-#: .\account\forms.py:23
+#: .\account\forms.py:24
 msgid "Повторите пароль"
 msgstr "Confirm password"
 
-#: .\account\forms.py:24
+#: .\account\forms.py:25
 msgid "Повторите пароль записанный выше"
 msgstr "Repeat password above"
 
-#: .\account\forms.py:33
+#: .\account\forms.py:34
 msgid "Как Вас зовут?"
 msgstr "What is your name?"
 
-#: .\account\forms.py:34
+#: .\account\forms.py:35
 msgid "Ваш Email"
 msgstr "Your Email"
 
-#: .\account\forms.py:45
+#: .\account\forms.py:46
 msgid "Иванов Иван Иванович"
 msgstr "Ivanov Ivan Ivanovich"
 
-#: .\account\forms.py:66
+#: .\account\forms.py:67
 msgid "Ваша фотография (необязательно)"
 msgstr "Your photo (optional)"
 
@@ -77,8 +77,8 @@ msgid "Вход в свой аккаунт HiNative"
 msgstr "Login to your HiNative account"
 
 #: .\account\templates\registration\login.html:10
-#: .\templates\includes\header.html:23 .\templates\includes\header.html:41
-#: .\templates\index.html:227
+#: .\index\templates\index\lists.html:36 .\templates\includes\header.html:24
+#: .\templates\includes\header.html:44
 msgid "Войти"
 msgstr "Log in"
 
@@ -86,7 +86,8 @@ msgstr "Log in"
 msgid "Регистрация | HiNative"
 msgstr "Registration | HiNative"
 
-#: .\account\templates\registration\register.html:11 .\templates\index.html:228
+#: .\account\templates\registration\register.html:11
+#: .\index\templates\index\lists.html:37
 msgid "Зарегистрироваться"
 msgstr "Registration"
 
@@ -154,9 +155,34 @@ msgstr "Add a comment"
 msgid "Отправить"
 msgstr "Send"
 
-#: .\blog\templates\blog\single_question.html:151
+#: .\blog\templates\blog\single_question.html:159
 msgid "Пока еще никто не прокомментировал этот вопрос"
 msgstr "No one has commented on this question yet"
+
+#: .\index\templates\index\lists.html:23
+msgid "Задай свой вопрос на сайте"
+msgstr "Ask your question on the site"
+
+#: .\index\templates\index\lists.html:24
+msgid ""
+"Задайте свой вопрос на сайте HiNative и получите ответ уже в ближайшее время"
+msgstr "Ask your question on the HiNative website and get an answer soon."
+
+#: .\index\templates\index\lists.html:26
+msgid "Перейти"
+msgstr "Go to"
+
+#: .\index\templates\index\lists.html:29
+msgid "Изучайте вместе с HiNative"
+msgstr "Learn with HiNative"
+
+#: .\index\templates\index\lists.html:32
+msgid ""
+"При помощи HiNative вы можете задавать вопросы как о английском, так и о "
+"русском языках, и получать ответы от настоящих их носителей."
+msgstr ""
+"With HiNative, you can ask questions about both English and Russian, and get "
+"answers from their real carriers."
 
 #: .\question\forms.py:12
 msgid "Название вопроса"
@@ -198,7 +224,7 @@ msgstr "Question added"
 msgid "Вопрос был успешно добавлен на сайт"
 msgstr "The question has been successfully added to the site"
 
-#: .\templates\blog-single.html:130
+#: .\templates\blog-single.html:65
 msgid "Ответы"
 msgstr "Answers"
 
@@ -206,9 +232,9 @@ msgstr "Answers"
 msgid "Фильтровать"
 msgstr "Filter"
 
-#: .\templates\includes\filters.html:6 .\templates\includes\header.html:16
-#: .\templates\includes\header.html:34 .\templates\index.html:81
-#: .\templates\index.html:195
+#: .\templates\includes\filters.html:6 .\templates\includes\header.html:17
+#: .\templates\includes\header.html:37 .\templates\index.html:72
+#: .\templates\index.html:91
 msgid "Все вопросы"
 msgstr "All questions"
 
@@ -220,15 +246,15 @@ msgstr "No answer"
 msgid "С аудиодорожкой"
 msgstr "With audio track"
 
-#: .\templates\includes\header.html:17 .\templates\includes\header.html:35
+#: .\templates\includes\header.html:18 .\templates\includes\header.html:38
 msgid "Язык"
 msgstr "Language"
 
-#: .\templates\includes\header.html:19 .\templates\includes\header.html:37
+#: .\templates\includes\header.html:20 .\templates\includes\header.html:40
 msgid "Задать вопрос"
 msgstr "Ask a Question"
 
-#: .\templates\includes\header.html:21 .\templates\includes\header.html:39
+#: .\templates\includes\header.html:22 .\templates\includes\header.html:42
 msgid "Выйти"
 msgstr "Log out"
 
@@ -252,11 +278,11 @@ msgstr "Hello"
 msgid "Начни изучать <br>иностранный язык <br>вместе с HiNative"
 msgstr "Start learning <br> a foreign language <br> with HiNative"
 
-#: .\templates\index.html:82
+#: .\templates\index.html:73
 msgid "Последние заданные вопросы"
 msgstr "Last questions asked"
 
-#: .\templates\index.html:83
+#: .\templates\index.html:74
 msgid ""
 "Здесь опубликованы последние заданные вопросы наших пользователей. И ты тоже "
 "можешь в этом поучаствовать. Ведь это абсолютно бесплатно! Присоединяйся "
@@ -265,36 +291,11 @@ msgstr ""
 "Here are the latest questions asked by our users. And you too can "
 "participate in this. After all, it is absolutely free! Join soon."
 
-#: .\templates\index.html:214
-msgid "Задай свой вопрос на сайте"
-msgstr "Ask your question on the site"
-
-#: .\templates\index.html:215
-msgid ""
-"Задайте свой вопрос на сайте HiNative и получите ответ уже в ближайшее время"
-msgstr "Ask your question on the HiNative website and get an answer soon."
-
-#: .\templates\index.html:217
-msgid "Перейти"
-msgstr "Go to"
-
-#: .\templates\index.html:220
-msgid "Изучайте вместе с HiNative"
-msgstr "Learn with HiNative"
-
-#: .\templates\index.html:223
-msgid ""
-"При помощи HiNative вы можете задавать вопросы как о английском, так и о "
-"русском языках, и получать ответы от настоящих их носителей."
-msgstr ""
-"With HiNative, you can ask questions about both English and Russian, and get "
-"answers from their real carriers."
-
-#: .\templates\question.html:50
+#: .\templates\question.html:49
 msgid "Задайте свой вопрос <br>на HiNative <br>"
 msgstr "Ask your question <br> on HiNative <br>"
 
-#: .\templates\question.html:72
+#: .\templates\question.html:71
 msgid "Вопрос"
 msgstr "Question"
 

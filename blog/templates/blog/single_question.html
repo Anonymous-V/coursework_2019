@@ -6,9 +6,9 @@
 
 
 {% block header_content %}
-    {% if post_img.image %}
+    {% if post_img %}
         <div class="page-header page-header--single page-hero"
-             style="background-image:url({{ post_img.image.url }}); background-size: cover">
+             style="background-image:url({{ post_img.url }}); background-size: cover">
     {% else %}
         <div class="page-header page-header--single page-hero"
              style="background-image:url({% static 'images/default-language-img.jpg' %}); background-size: cover">
@@ -108,6 +108,14 @@
 
             <button type="submit" class="submit btn--primary">{% trans 'Отправить' %}</button>
         </form> <!-- Form End -->
+
+        {% if messages %}
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                {% include 'includes/add_messages.html' %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
     </div> <!-- Respond End -->
 {% endblock %}
 

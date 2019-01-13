@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.urls import reverse
 from .forms import LoginForm, UserRegistrationForm, ProfileForm
@@ -7,6 +8,10 @@ from .models import Profile
 
 
 def user_login(request):
+    return_page = reverse('index_page')
+    if 'next' in request.GET:
+        return_page = request.GET.get('next')
+        messages.add_message(request, messages.ERROR, 'Данная страница доступна только<br>авторизированным пользователям.')
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -15,7 +20,7 @@ def user_login(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return redirect(reverse('index_page'))
+                    return redirect(return_page)
                 else:
                     return HttpResponse('Disabled account')
             else:
@@ -42,7 +47,7 @@ def register(request):
             new_user.save()
             new_user.refresh_from_db()
 
-            new_profile = Profile.objects.create(user=new_user, photo=request.FILES['photo'])
+            new_profile = Profile.objects.create(user=new_user, photo=profile_form.cleaned_data['photo'])
             new_profile.save()
 
             return render(request, 'registration/register_done.html', {

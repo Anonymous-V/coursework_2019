@@ -1,11 +1,16 @@
 from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
+from imagekit.models import ProcessedImageField
 
 class AvailableLanguage(models.Model):
     lang = models.CharField(max_length=50, unique=True, choices=settings.LANGUAGES)
     lang_code = models.CharField(max_length=5, unique=True, blank=True, null=True)
-    image = models.ImageField(upload_to='language/', blank=True, null=True)
+    image = ProcessedImageField(upload_to='language/',
+                                blank=True,
+                                null=True,
+                                format='JPEG',
+                                options={'quality': 60})
     slug = models.SlugField(blank=True, null=True)
 
     class Meta:

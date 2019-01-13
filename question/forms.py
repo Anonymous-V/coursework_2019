@@ -33,7 +33,6 @@ class UserQuestion(forms.ModelForm):
 
     def clean_audio(self):
         file = self.cleaned_data['audio']
-        print(file)
         if not file:
             return None
         # if not file.content-type in ['audio/mpeg', 'audio/...']:

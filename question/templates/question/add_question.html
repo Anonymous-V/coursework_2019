@@ -10,4 +10,13 @@
         {% csrf_token %}
         <input class="btn--primary" type="submit" value="{% trans 'Создать' %}">
     </form>
+
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                {% include 'includes/add_messages.html' %}
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
 {% endblock %}

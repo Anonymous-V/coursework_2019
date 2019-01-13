@@ -4,9 +4,19 @@
 {% block title %}{% trans 'Вход в свой аккаунт HiNative' %}{% endblock %}
 
 {% block content %}
-    <form action="." method="post">
+    <form action="{{ next }}" method="post">
         {{ form }}
         {% csrf_token %}
         <input class="btn--primary" type="submit" value="{% trans 'Войти' %}">
     </form>
+    <p>Еще нет аккаунта? <a href="{% url 'registration' %}">Зарегистрируйтесь</a></p>
+
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                {% include 'includes/add_messages.html' %}
+            {% endif %}        
+        {% endfor %}
+    {% endif %}
+
 {% endblock %}
