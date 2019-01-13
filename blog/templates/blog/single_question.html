@@ -41,12 +41,22 @@
 {% block content %}
 
     <p style="text-align: center;">
-        <img width="120" height="120"
-             style="border-radius: 50%;
-             margin: 0 auto;
-             display: block"
-             src="{{ post.author.profile.photo.url }}"
-             alt="{{ post.author }}">
+        {% if post.author.profilel.photo %}
+            <img width="120" height="120"
+                 style="border-radius: 50%;
+                 margin: 0 auto;
+                 display: block"
+                 src="{{ post.author.profile.photo.url }}"
+                 alt="{{ post.author }}">
+        {% else %}
+            <img width="120" height="120"
+                 style="border-radius: 50%;
+                 margin: 0 auto;
+                 display: block"
+                 src="{% static 'images/default-user.jpg' %}"
+                 alt="{{ post.author }}">
+        {% endif %}
+
         <span style="font-size: 3rem;">{{ post.author.first_name }}</span>
     </p>
 
