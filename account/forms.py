@@ -5,11 +5,13 @@ import os
 from .models import Profile
 
 class LoginForm(forms.Form):
-    username = forms.CharField(label=_('Логин на сайте'), widget=forms.TextInput(
+    username = forms.CharField(label=_('Логин на сайте'),
+                               widget=forms.TextInput(
         attrs={'placeholder': _('Введите Ваш логин'),
                'class': 'full-width'}
     ))
-    password = forms.CharField(label=_('Пароль для входа'), widget=forms.PasswordInput(
+    password = forms.CharField(label=_('Пароль для входа'),
+                               widget=forms.PasswordInput(
         attrs={'placeholder': _('Введите Ваш пароль'),
                'class': 'full-width'}
     ))
@@ -17,11 +19,13 @@ class LoginForm(forms.Form):
 
 
 class UserRegistrationForm(forms.ModelForm):
-    password = forms.CharField(label=_('Пароль для входа'), widget=forms.PasswordInput(
+    password = forms.CharField(label=_('Пароль для входа'),
+                               widget=forms.PasswordInput(
         attrs={'placeholder': _('Придумайте пароль не менее 6 символов'),
                'class': 'full-width'}
     ))
-    password2 = forms.CharField(label=_('Повторите пароль'), widget=forms.PasswordInput(
+    password2 = forms.CharField(label=_('Повторите пароль'),
+                                widget=forms.PasswordInput(
         attrs={'placeholder': _('Повторите пароль записанный выше'),
                'class': 'full-width'}
     ))

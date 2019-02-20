@@ -48,8 +48,10 @@ def single_post(request, lang_slug, post_id):
 
     lang = AvailableLanguage.objects.get(slug=lang_slug)
     post = Question.objects.get(id=post_id)
-    post_pred = Question.objects.filter(language_id=lang.id, id__lt=post_id).first()
-    post_next = Question.objects.filter(language_id=lang.id, id__gt=post_id).last()
+    post_pred = Question.objects.filter(language_id=lang.id,
+                                        id__lt=post_id).first()
+    post_next = Question.objects.filter(language_id=lang.id,
+                                        id__gt=post_id).last()
     comments = Comments.objects.filter(post=post_id, active=True)
 
     all_comments = blog(request, comments, 5)
@@ -67,7 +69,8 @@ def single_post(request, lang_slug, post_id):
             new_comment.author = request.user
             new_comment.save()
 
-            messages.add_message(request, messages.SUCCESS, _('Ваш комментарий был успешно добавлен'))
+            messages.add_message(request, messages.SUCCESS,
+                                 _('Ваш комментарий был успешно добавлен'))
 
             all_comments['comment_form'] = comment_form
 

@@ -15,8 +15,10 @@ def add_question(request):
             new_question.author = request.user
             new_question.save()
 
-            url_question = reverse('single_post', args=(new_question.language.slug, new_question.id,))
-            text = _('Вопрос <a href="{0}">{1}</a> был успешно добавлен').format(url_question, new_question.title)
+            url_question = reverse('single_post',
+                                   args=(new_question.language.slug, new_question.id,))
+            text = _('Вопрос <a href="{0}">{1}</a> был успешно добавлен')\
+                .format(url_question, new_question.title)
             messages.add_message(request, messages.SUCCESS, text)
 
             return redirect(reverse('question'))

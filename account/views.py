@@ -12,7 +12,8 @@ def user_login(request):
     return_page = reverse('index_page')
     if 'next' in request.GET:
         return_page = request.GET.get('next')
-        messages.add_message(request, messages.ERROR, _('Данная страница доступна только<br>авторизированным пользователям'))
+        messages.add_message(request, messages.ERROR,
+            _('Данная страница доступна только<br>авторизированным пользователям'))
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -48,7 +49,8 @@ def register(request):
             new_user.save()
             new_user.refresh_from_db()
 
-            new_profile = Profile.objects.create(user=new_user, photo=profile_form.cleaned_data['photo'])
+            new_profile = Profile.objects.create(user=new_user,
+                                                 photo=profile_form.cleaned_data['photo'])
             new_profile.save()
 
             return render(request, 'registration/register_done.html', {
@@ -58,10 +60,10 @@ def register(request):
         else:
             user_form = UserRegistrationForm(request.POST)
             new_profile = ProfileForm(data=request.POST, files=request.FILES)
-        return render(request, 'registration/register.html', {
-            'user_form': user_form,
-            'new_profile': new_profile
-        })
+        # return render(request, 'registration/register.html', {
+        #     'user_form': user_form,
+        #     'new_profile': new_profile
+        # })
     else:
         user_form = UserRegistrationForm()
         new_profile = ProfileForm()
