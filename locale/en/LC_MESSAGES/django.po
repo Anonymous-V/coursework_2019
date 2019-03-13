@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-13 15:53+0300\n"
+"POT-Creation-Date: 2019-03-10 21:08+0300\n"
 "PO-Revision-Date: 2019-01-09 10:35+0000\n"
 "Last-Translator: b'Anonym  <anonym@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,47 +19,47 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Translated-Using: django-rosetta 0.9.0\n"
 
-#: .\account\forms.py:8 .\account\forms.py:33
+#: .\account\forms.py:8 .\account\forms.py:37
 msgid "Логин на сайте"
 msgstr "Login to website"
 
-#: .\account\forms.py:9
+#: .\account\forms.py:10
 msgid "Введите Ваш логин"
 msgstr "Enter your login"
 
-#: .\account\forms.py:12 .\account\forms.py:20
+#: .\account\forms.py:13 .\account\forms.py:22
 msgid "Пароль для входа"
 msgstr "Login password"
 
-#: .\account\forms.py:13
+#: .\account\forms.py:15
 msgid "Введите Ваш пароль"
 msgstr "Enter your password"
 
-#: .\account\forms.py:21
+#: .\account\forms.py:24
 msgid "Придумайте пароль не менее 6 символов"
 msgstr "Create a password of at least 6 characters"
 
-#: .\account\forms.py:24
+#: .\account\forms.py:27
 msgid "Повторите пароль"
 msgstr "Confirm password"
 
-#: .\account\forms.py:25
+#: .\account\forms.py:29
 msgid "Повторите пароль записанный выше"
 msgstr "Repeat password above"
 
-#: .\account\forms.py:34
+#: .\account\forms.py:38
 msgid "Как Вас зовут?"
 msgstr "What is your name?"
 
-#: .\account\forms.py:35
+#: .\account\forms.py:39
 msgid "Ваш Email"
 msgstr "Your Email"
 
-#: .\account\forms.py:46
+#: .\account\forms.py:50
 msgid "Иванов Иван Иванович"
 msgstr "Ivanov Ivan Ivanovich"
 
-#: .\account\forms.py:67
+#: .\account\forms.py:71
 msgid "Ваша фотография (необязательно)"
 msgstr "Your photo (optional)"
 
@@ -117,15 +117,15 @@ msgstr "Your account has been successfully created"
 msgid "Авторизируйтесь"
 msgstr "Log in"
 
-#: .\account\views.py:15
+#: .\account\views.py:16
 msgid "Данная страница доступна только<br>авторизированным пользователям"
 msgstr ""
 
-#: .\account\views.py:26
+#: .\account\views.py:27
 msgid "Отключенный аккаунт"
 msgstr ""
 
-#: .\account\views.py:29
+#: .\account\views.py:30
 msgid "Проверьте правильность введенных Вами данных"
 msgstr ""
 
@@ -153,35 +153,35 @@ msgstr "More"
 msgid "от"
 msgstr "from"
 
-#: .\blog\templates\blog\single_question.html:60
+#: .\blog\templates\blog\single_question.html:70
 msgid "Ваш браузер не поддерживает аудио"
 msgstr "Your browser does not support audio"
 
-#: .\blog\templates\blog\single_question.html:76
+#: .\blog\templates\blog\single_question.html:86
 msgid "Предыдущий вопрос"
 msgstr "Last question"
 
-#: .\blog\templates\blog\single_question.html:85
+#: .\blog\templates\blog\single_question.html:95
 msgid "Следующий вопрос"
 msgstr "Next question"
 
-#: .\blog\templates\blog\single_question.html:95
+#: .\blog\templates\blog\single_question.html:105
 msgid "Другие вопросы"
 msgstr "Another questions"
 
-#: .\blog\templates\blog\single_question.html:104
+#: .\blog\templates\blog\single_question.html:114
 msgid "Добавить комментарий"
 msgstr "Add a comment"
 
-#: .\blog\templates\blog\single_question.html:109
+#: .\blog\templates\blog\single_question.html:119
 msgid "Отправить"
 msgstr "Send"
 
-#: .\blog\templates\blog\single_question.html:159
+#: .\blog\templates\blog\single_question.html:169
 msgid "Пока еще никто не прокомментировал этот вопрос"
 msgstr "No one has commented on this question yet"
 
-#: .\blog\views.py:70
+#: .\blog\views.py:73
 #, fuzzy
 #| msgid "Ваш аккаунт был успешно создан"
 msgid "Ваш комментарий был успешно добавлен"
@@ -252,7 +252,7 @@ msgstr "Question added"
 msgid "Вопрос был успешно добавлен на сайт"
 msgstr "The question has been successfully added to the site"
 
-#: .\question\views.py:19
+#: .\question\views.py:20
 #, fuzzy, python-brace-format
 #| msgid "Вопрос был успешно добавлен на сайт"
 msgid "Вопрос <a href=\"{0}\">{1}</a> был успешно добавлен"
@@ -292,7 +292,19 @@ msgstr "Ask a Question"
 msgid "Выйти"
 msgstr "Log out"
 
-#: .\templates\includes\modal_window_language.html:17
+#: .\templates\includes\modal_window_language.html:18
+#, fuzzy
+#| msgid "Перейти"
+msgid "Переводы"
+msgstr "Go to"
+
+#: .\templates\includes\modal_window_language.html:19
+#, fuzzy
+#| msgid "Отправить"
+msgid "Добавить"
+msgstr "Send"
+
+#: .\templates\includes\modal_window_language.html:21
 msgid "Закрыть"
 msgstr "Close"
 

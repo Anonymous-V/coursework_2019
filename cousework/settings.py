@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'account',
     'question',
     'blog',
+    'language',
     'imagekit',
     'rosetta',
     'django.contrib.admin',
@@ -122,25 +123,29 @@ import django.conf.locale
 
 LANGUAGE_CODE = 'ru'
 
-LANGUAGES = (
-    ('ru', 'Русский'),
-    ('en', 'English'),
-    ('ady', 'Адыгабзэ'),
-)
+# LANGUAGES = (
+#     ('ru', 'Русский'),
+#     ('en', 'English'),
+#     ('ady', 'Адыгабзэ'),
+# )
+
+from cousework.settings_language import LANGUAGES
 
 LOCALE_PATHS = (
     (os.path.join(BASE_DIR, 'locale/'),)
 )
 
 # Добавление адыгейского языка, т.к. он является не стандартным для Django
-EXTRA_LANG_INFO = {
-    'ady': {
-        'bidi': False, # right-to-left
-        'code': 'ady',
-        'name': 'Адыгабзэ',
-        'name_local': u'Адыгабзэ', #unicode codepoints here
-    },
-}
+# EXTRA_LANG_INFO = {
+#     'ady': {
+#         'bidi': False, # right-to-left
+#         'code': 'ady',
+#         'name': 'Адыгабзэ',
+#         'name_local': u'Адыгабзэ', #unicode codepoints here
+#     },
+# }
+
+from cousework.settings_language_extra import EXTRA_LANG_INFO
 
 LANG_INFO = dict(django.conf.locale.LANG_INFO, **EXTRA_LANG_INFO)
 django.conf.locale.LANG_INFO = LANG_INFO

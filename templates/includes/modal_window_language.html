@@ -14,6 +14,10 @@
                 {% endfor %}
             </ul>
             <div>
+                {% if request.user.is_superuser %}
+                    <a href="{% url 'rosetta-old-home-redirect' %}" class="btn btn--stroke" data-dialog-close="">{% trans 'Переводы' %}</a>
+                    <a href="{% url 'add_language' %}" class="btn btn--stroke" data-dialog-close="">{% trans 'Добавить' %}</a>
+                {% endif %}
                 <button class="action" data-dialog-close="">{% trans 'Закрыть' %}</button>
             </div>
         </div>

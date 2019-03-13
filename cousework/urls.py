@@ -26,4 +26,5 @@ urlpatterns = i18n_patterns(
     path('account/', include('account.urls')),
     path('question/', include('question.urls')),
     path('blog/', include('blog.urls')),
+    path('language/', include('language.urls')),
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
