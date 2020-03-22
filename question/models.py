@@ -3,6 +3,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from imagekit.models import ProcessedImageField
 
+
 class AvailableLanguage(models.Model):
     lang = models.CharField(max_length=50, unique=True,
                             choices=settings.LANGUAGES)
@@ -27,7 +28,6 @@ class AvailableLanguage(models.Model):
 
 
 class Question(models.Model):
-
     title = models.CharField(max_length=250)
     language = models.ForeignKey(AvailableLanguage,
                                  on_delete=models.CASCADE, default='')
@@ -36,6 +36,7 @@ class Question(models.Model):
     body = models.TextField()
     date = models.DateField(auto_now_add=True, blank=True, null=True)
     audio = models.FileField(upload_to='audio/', blank=True)
+    # answered = models.BooleanField(default=False, blank=True, null=True)
 
     class Meta:
         ordering = ['-id']

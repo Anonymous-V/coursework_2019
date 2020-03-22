@@ -1,11 +1,13 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext as _
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.urls import reverse
 from .forms import LoginForm, UserRegistrationForm, ProfileForm
+from django.contrib.auth.decorators import login_required
 from .models import Profile
+from django.contrib.auth.models import User
 
 
 def user_login(request):
@@ -13,7 +15,7 @@ def user_login(request):
     if 'next' in request.GET:
         return_page = request.GET.get('next')
         messages.add_message(request, messages.ERROR,
-            _('Данная страница доступна только<br>авторизированным пользователям'))
+                             _('Данная страница доступна только<br>авторизированным пользователям'))
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -71,3 +73,31 @@ def register(request):
         'user_form': user_form,
         'new_profile': new_profile
     })
+
+
+@login_required
+def dashboard(request):
+    all_users_count = 5
+
+    users = Profile.objects.all().order_by('-rating_user')
+    more = False
+    cnt = 0
+    dots = True
+
+    for inx, user in enumerate(users, start=1):
+        if user.user == request.user:
+            cnt = inx
+            break
+
+    if cnt > all_users_count:
+        more = True
+        if cnt - all_users_count == 1:
+            dots = False
+    users = users[:all_users_count]
+
+    current_user = request.user
+    return render(request, 'account/user.html', {'users': users,
+                                                 'current_user': current_user,
+                                                 'more': more,
+                                                 'cnt': cnt,
+                                                 'dots': dots})

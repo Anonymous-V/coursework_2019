@@ -137,13 +137,36 @@
                <li class="depth-1 comment">
 
                    <div class="comment__avatar">
-                       <img width="50" height="50" class="avatar" src="{{ comment.author.profile.photo.url }}" alt="">
+                       {% if comment.author.profile.photo %}
+                            <img width="50" height="50" class="avatar" src="{{ comment.author.profile.photo.url }}" alt="">
+                       {% else %}
+                           <img width="50" height="50" class="avatar" src="{% static 'images/default-user.jpg' %}" alt="">
+                       {% endif %}
+
                    </div>
 
                    <div class="comment__content">
                        <div class="comment__info">
                            <cite>{{ comment.author.first_name }}</cite>
-
+                            {% if comment.best_answer %}
+                                <span class="best-answer">{% trans 'Лучший ответ' %}</span>
+                            {% endif %}
+                           {% if post.author.id == request.user.id %}
+                               {% if comment.author.id != request.user.id %}
+                                   <span style="float: right">
+                                       <form action="{% url 'single_post_rating' lang_slug post_id %}"
+                                             method='post' style="padding: 0; margin: 0">
+                                           <input type="hidden" name="foo" value="{{ comment.author.id }}">
+                                           <input type="hidden" name="comment" value="{{ comment.id }}">
+                                           {% csrf_token %}
+                                           <button type="submit" class="heart_btn"
+                                                   {% if comment.best_answer %}style="color: #ED3B37"{% endif %}>
+                                               &#10084;<span class="like_answer">{% trans 'нравится' %}</span>
+                                           </button>
+                                       </form>
+                                   </span>
+                               {% endif %}
+                           {% endif %}
                            <div class="comment__meta">
                                <time class="comment__time">{{ comment.created|date:'M d, o @ G:i' }}{% comment %}Sep 16, 2017 @ 23:05{% endcomment %}</time>
                            </div>

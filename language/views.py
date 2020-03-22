@@ -66,6 +66,9 @@ def add_language(request):
                 f.write(structure)
                 f.close()
 
+            # options = {}
+            # options['ignore'] = 'myvenv'
+            # management.call_command('makemessages', **options)
             management.call_command('makemessages')
 
             return redirect(reverse('index_page'))
@@ -113,4 +116,4 @@ def add_language(request):
     # dt[code + '2'] = language
 
     # return HttpResponse(dt.items())
-    return render(request, 'language/temp.html', {'dt': dt})
+    # return render(request, 'language/temp.html', {'dt': dt})

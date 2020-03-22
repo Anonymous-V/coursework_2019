@@ -1,4 +1,4 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext as _
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.urls import reverse

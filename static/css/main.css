@@ -4154,3 +4154,31 @@ article.blog-single .blog-content {
 .absolute-message p {
     margin-bottom: 1rem;
 }
+
+.best-answer {
+    padding: 3px;
+    border-radius: 3px;
+    background-color: forestgreen;
+    color: white;
+    font-size: 0.8em;
+}
+
+.heart_btn {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    font-size: 1.4em;
+}
+
+.heart_btn:hover {
+    background-color: transparent;
+}
+
+.like_answer {
+    font-size: 0.65em;
+    text-transform: none;
+    letter-spacing: 0;
+    vertical-align: text-bottom
+}

@@ -1,10 +1,13 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext as _
 from django import forms
 from .models import Comments
+from account.models import Profile
 import os
+
 
 class CommentForm(forms.ModelForm):
     message = forms.Textarea()
+
     class Meta:
         model = Comments
         fields = ('message', 'audio',)
@@ -35,3 +38,10 @@ class CommentForm(forms.ModelForm):
         if not os.path.splitext(file.name)[1] in ['.mp3', '.wav']:
             raise forms.ValidationError('This is no audio file')
         return file
+
+
+class RatingForm(forms.ModelForm):
+
+    class Meta:
+        model = Profile
+        fields = ('rating_user',)

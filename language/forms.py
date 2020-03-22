@@ -1,5 +1,6 @@
 from django import forms
 
+
 class AddLanguage(forms.Form):
     code = forms.CharField(max_length=5,
                            label='Код языка',

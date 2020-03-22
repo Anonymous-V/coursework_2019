@@ -154,7 +154,7 @@ django.conf.locale.LANG_INFO = LANG_INFO
 # LANGUAGES_BIDI = global_settings.LANGUAGES_BIDI + ['ady']
 
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 

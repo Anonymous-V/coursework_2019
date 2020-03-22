@@ -3,6 +3,7 @@ from django.template.defaultfilters import stringfilter
 
 register = template.Library()
 
+
 @register.filter('wrap_div')
 @stringfilter
 def wrap_div(value):

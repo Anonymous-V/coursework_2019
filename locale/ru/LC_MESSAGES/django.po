@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-10 21:08+0300\n"
+"POT-Creation-Date: 2019-11-24 15:07+0300\n"
 "PO-Revision-Date: 2019-01-07 18:25+0000\n"
 "Last-Translator: b'Anonym  <anonym@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,47 +21,47 @@ msgstr ""
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 "X-Translated-Using: django-rosetta 0.9.0\n"
 
-#: .\account\forms.py:8 .\account\forms.py:37
+#: .\account\forms.py:9 .\account\forms.py:38
 msgid "Логин на сайте"
 msgstr ""
 
-#: .\account\forms.py:10
+#: .\account\forms.py:11
 msgid "Введите Ваш логин"
 msgstr ""
 
-#: .\account\forms.py:13 .\account\forms.py:22
+#: .\account\forms.py:14 .\account\forms.py:23
 msgid "Пароль для входа"
 msgstr ""
 
-#: .\account\forms.py:15
+#: .\account\forms.py:16
 msgid "Введите Ваш пароль"
 msgstr ""
 
-#: .\account\forms.py:24
+#: .\account\forms.py:25
 msgid "Придумайте пароль не менее 6 символов"
 msgstr ""
 
-#: .\account\forms.py:27
+#: .\account\forms.py:28
 msgid "Повторите пароль"
 msgstr ""
 
-#: .\account\forms.py:29
+#: .\account\forms.py:30
 msgid "Повторите пароль записанный выше"
 msgstr ""
 
-#: .\account\forms.py:38
+#: .\account\forms.py:39
 msgid "Как Вас зовут?"
 msgstr ""
 
-#: .\account\forms.py:39
+#: .\account\forms.py:40
 msgid "Ваш Email"
 msgstr ""
 
-#: .\account\forms.py:50
+#: .\account\forms.py:51
 msgid "Иванов Иван Иванович"
 msgstr ""
 
-#: .\account\forms.py:71
+#: .\account\forms.py:73
 msgid "Ваша фотография (необязательно)"
 msgstr ""
 
@@ -129,15 +129,15 @@ msgstr ""
 msgid "Проверьте правильность введенных Вами данных"
 msgstr ""
 
-#: .\blog\forms.py:13
+#: .\blog\forms.py:16
 msgid "Комментарий к вопросу"
 msgstr ""
 
-#: .\blog\forms.py:14
+#: .\blog\forms.py:17
 msgid "Аудиофайл"
 msgstr ""
 
-#: .\blog\forms.py:19
+#: .\blog\forms.py:22
 msgid "Ваш комментарий"
 msgstr ""
 
@@ -177,11 +177,19 @@ msgstr ""
 msgid "Отправить"
 msgstr ""
 
-#: .\blog\templates\blog\single_question.html:169
+#: .\blog\templates\blog\single_question.html:152
+msgid "Лучший ответ"
+msgstr ""
+
+#: .\blog\templates\blog\single_question.html:163
+msgid "нравится"
+msgstr ""
+
+#: .\blog\templates\blog\single_question.html:190
 msgid "Пока еще никто не прокомментировал этот вопрос"
 msgstr ""
 
-#: .\blog\views.py:73
+#: .\blog\views.py:80
 msgid "Ваш комментарий был успешно добавлен"
 msgstr ""
 
@@ -208,27 +216,27 @@ msgid ""
 "русском языках, и получать ответы от настоящих их носителей."
 msgstr ""
 
-#: .\question\forms.py:12
+#: .\question\forms.py:13
 msgid "Название вопроса"
 msgstr ""
 
-#: .\question\forms.py:13 .\templates\includes\modal_window_language.html:10
+#: .\question\forms.py:14 .\templates\includes\modal_window_language.html:10
 msgid "Выберите язык"
 msgstr ""
 
-#: .\question\forms.py:14
+#: .\question\forms.py:15
 msgid "Текст вопроса"
 msgstr ""
 
-#: .\question\forms.py:15
+#: .\question\forms.py:16
 msgid "Аудио (необязательно)"
 msgstr ""
 
-#: .\question\forms.py:19
+#: .\question\forms.py:20
 msgid "Введите название вопроса"
 msgstr ""
 
-#: .\question\forms.py:23
+#: .\question\forms.py:24
 msgid "Введите текст вопроса"
 msgstr ""
 

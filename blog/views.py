@@ -1,11 +1,13 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext as _
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.paginator import Paginator
 from question.models import Question, AvailableLanguage
 from django.contrib.auth.decorators import login_required
-from .forms import CommentForm
+from .forms import CommentForm, RatingForm
 from .models import Comments
+from django.contrib.auth.models import User
+from django.urls import reverse
 import datetime
 
 
@@ -21,11 +23,13 @@ def blog(request, posts, pages):
 
     return obj
 
+
 def all_posts(request):
     posts = Question.objects.all()
     posts_all = blog(request, posts, 6)
 
     return render(request, 'blog/all_posts.html', posts_all)
+
 
 def lang_posts(request, lang_slug):
     lang = AvailableLanguage.objects.get(slug=lang_slug)
@@ -43,9 +47,9 @@ def date_posts(request, year, month, day):
 
     return render(request, 'blog/all_posts.html', blog(request, posts, 6))
 
+
 @login_required
 def single_post(request, lang_slug, post_id):
-
     lang = AvailableLanguage.objects.get(slug=lang_slug)
     post = Question.objects.get(id=post_id)
     post_pred = Question.objects.filter(language_id=lang.id,
@@ -55,11 +59,14 @@ def single_post(request, lang_slug, post_id):
     comments = Comments.objects.filter(post=post_id, active=True)
 
     all_comments = blog(request, comments, 5)
-    print(all_comments)
+    # print(all_comments)
     all_comments['post'] = post
     all_comments['post_pred'] = post_pred
     all_comments['post_next'] = post_next
     all_comments['post_img'] = lang.image
+    all_comments['lang_slug'] = lang_slug
+    all_comments['post_id'] = post_id
+    all_comments['rating_form'] = RatingForm()
 
     if request.method == 'POST':
         comment_form = CommentForm(data=request.POST, files=request.FILES)
@@ -82,3 +89,32 @@ def single_post(request, lang_slug, post_id):
         all_comments['comment_form'] = comment_form
 
     return render(request, 'blog/single_question.html', all_comments)
+
+
+@login_required
+def single_post_rating(request, lang_slug, post_id):
+    all_comments = Comments.objects.filter(post=post_id, active=True)
+    user = User.objects.get(pk=request.POST.get('foo'))
+    comment = Comments.objects.get(pk=request.POST.get('comment'))
+    user_id = -1
+
+    comment.best_answer = not comment.best_answer
+    comment.save()
+
+    if comment.best_answer:
+        user.profile.rating_user += 1
+        user.profile.save()
+        user_id = user.id
+    else:
+        user.profile.rating_user -= 1
+        user.profile.save()
+
+    for comment_user in all_comments:
+        if comment_user.best_answer and (comment_user.author.id != user_id):
+            comment_user.best_answer = False
+            comment_user.save()
+
+            comment_user.author.profile.rating_user -= 1
+            comment_user.author.profile.save()
+
+    return redirect(reverse('single_post', kwargs={'lang_slug': lang_slug, 'post_id': post_id}))

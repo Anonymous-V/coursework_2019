@@ -1,7 +1,8 @@
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext as _
 from django import forms
 import os
 from .models import Question
+
 
 class UserQuestion(forms.ModelForm):
     class Meta:

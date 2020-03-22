@@ -1,0 +1,81 @@
+{% extends 'account.html' %}
+{% load staticfiles %}
+{% load i18n %}
+
+{% block single_header_post %}
+    {% if post_img.image %}
+        <section class="page-header page-hero"
+             style="background-image:url({{ post_img.image.url }})">
+    {% else %}
+        <section class="page-header page-hero"
+             style="background-image:url({% static 'images/blog-bg-03.jpg' %})">
+    {% endif %}
+    </section>
+{% endblock %}
+
+{% block title %}{% trans 'Моя страница | HiNative' %}{% endblock %}
+
+{% block content %}
+    <div class="col-twelve">
+        <div class="table-responsive">
+            <table style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th>№</th>
+                        <th>Имя</th>
+                        <th>Лучших ответов</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user_profile in users %}
+                        <tr {% if user_profile.user.id == current_user.id %}
+                            style="background-color: rgba(182, 204, 161, .25);"
+                        {% endif %}>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ user_profile.user.first_name }}</td>
+                            <td>{{ user_profile.rating_user }}</td>
+                        </tr>
+                    {% endfor %}
+
+                    {% if more %}
+                        {% if dots %}
+                            <tr>
+                                <td>...</td>
+                                <td>...</td>
+                                <td>...</td>
+                            </tr>
+                        {% endif %}
+
+                        <tr style="background-color: rgba(182, 204, 161, .25);">
+                            <td>{{ cnt }}</td>
+                            <td>{{ current_user.first_name }}</td>
+                            <td>{{ current_user.profile.rating_user }}</td>
+                        </tr>
+
+                    {% endif %}
+
+{#                    <tr>#}
+{#                        <td>1</td>#}
+{#                        <td>Naruto Uzumaki</td>#}
+{#                        <td>5</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>2</td>#}
+{#                        <td>Sakura Haruno</td>#}
+{#                        <td>3</td>#}
+{#                    </tr>#}
+{#                    <tr>#}
+{#                        <td>...</td>#}
+{#                        <td>...</td>#}
+{#                        <td>...</td>#}
+{#                    </tr>#}
+{#                    <tr style="background-color: rgba(182, 204, 161, .25);">#}
+{#                        <td>18</td>#}
+{#                        <td>Sara Haro</td>#}
+{#                        <td>0</td>#}
+{#                    </tr>#}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

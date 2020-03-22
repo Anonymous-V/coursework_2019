@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-10 21:08+0300\n"
+"POT-Creation-Date: 2019-11-24 15:07+0300\n"
 "PO-Revision-Date: 2019-01-13 15:16+0000\n"
 "Last-Translator: b'Anonym  <anonym@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,47 +18,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.9.0\n"
 
-#: .\account\forms.py:8 .\account\forms.py:37
+#: .\account\forms.py:9 .\account\forms.py:38
 msgid "Логин на сайте"
 msgstr "Логиныр"
 
-#: .\account\forms.py:10
+#: .\account\forms.py:11
 msgid "Введите Ваш логин"
 msgstr "Шъуилогиныр тэшъутхэт"
 
-#: .\account\forms.py:13 .\account\forms.py:22
+#: .\account\forms.py:14 .\account\forms.py:23
 msgid "Пароль для входа"
 msgstr "Шъуипароль"
 
-#: .\account\forms.py:15
+#: .\account\forms.py:16
 msgid "Введите Ваш пароль"
 msgstr "Шъуипарольыр тэшъутхэт"
 
-#: .\account\forms.py:24
+#: .\account\forms.py:25
 msgid "Придумайте пароль не менее 6 символов"
 msgstr "Къэшъугупшыс шъуипарольыр, ау символхэр 6 нахь мэкlэнэу щытэп"
 
-#: .\account\forms.py:27
+#: .\account\forms.py:28
 msgid "Повторите пароль"
 msgstr "Ыджыри зэ парольыр тэшъутхэт"
 
-#: .\account\forms.py:29
+#: .\account\forms.py:30
 msgid "Повторите пароль записанный выше"
 msgstr "Аипэджэ шъутхыгъагъэр парольыр ыджыры шъутхыжьыт"
 
-#: .\account\forms.py:38
+#: .\account\forms.py:39
 msgid "Как Вас зовут?"
 msgstr "Ща пц1эр?"
 
-#: .\account\forms.py:39
+#: .\account\forms.py:40
 msgid "Ваш Email"
 msgstr "Шъуи Email"
 
-#: .\account\forms.py:50
+#: .\account\forms.py:51
 msgid "Иванов Иван Иванович"
 msgstr "Иванов Иван Иванович"
 
-#: .\account\forms.py:71
+#: .\account\forms.py:73
 msgid "Ваша фотография (необязательно)"
 msgstr "Шъуи сурэт (ар хэмытми хъут)"
 
@@ -126,15 +126,15 @@ msgstr "Аккаунтыр гъэкlосагъ"
 msgid "Проверьте правильность введенных Вами данных"
 msgstr "Шъуиданнэхэм ятэрэзэныгъэ шъэуплъэкlу"
 
-#: .\blog\forms.py:13
+#: .\blog\forms.py:16
 msgid "Комментарий к вопросу"
 msgstr "Упч1ым икомментарий"
 
-#: .\blog\forms.py:14
+#: .\blog\forms.py:17
 msgid "Аудиофайл"
 msgstr "Аудиофайлыр"
 
-#: .\blog\forms.py:19
+#: .\blog\forms.py:22
 msgid "Ваш комментарий"
 msgstr "Шъуикомментарий"
 
@@ -174,11 +174,23 @@ msgstr "Комментариер хэбгъэхъощт"
 msgid "Отправить"
 msgstr "Пт1упщыт"
 
-#: .\blog\templates\blog\single_question.html:169
+#: .\blog\templates\blog\single_question.html:152
+#, fuzzy
+#| msgid "Без ответа"
+msgid "Лучший ответ"
+msgstr "Джэуап иlэп"
+
+#: .\blog\templates\blog\single_question.html:163
+#, fuzzy
+#| msgid "Отправить"
+msgid "нравится"
+msgstr "Пт1упщыт"
+
+#: .\blog\templates\blog\single_question.html:190
 msgid "Пока еще никто не прокомментировал этот вопрос"
 msgstr "Ыджыри зыми джэуап упч1ым ритыгъэп"
 
-#: .\blog\views.py:73
+#: .\blog\views.py:80
 msgid "Ваш комментарий был успешно добавлен"
 msgstr "Шъуи коментариер тэрэзэу хъэгъэхъуагъ"
 
@@ -209,27 +221,27 @@ msgstr ""
 "HiNative бгъэфедэзэ упчlэхэр шъутышъуыщт английскабзэ пай, урысыбзэ пай, "
 "етlанэ цlыфо абзэхэ зыгъэфедэрэмэ, джэуап къуатыт."
 
-#: .\question\forms.py:12
+#: .\question\forms.py:13
 msgid "Название вопроса"
 msgstr "Упч1эм ыц1э"
 
-#: .\question\forms.py:13 .\templates\includes\modal_window_language.html:10
+#: .\question\forms.py:14 .\templates\includes\modal_window_language.html:10
 msgid "Выберите язык"
 msgstr "Бзэр къыхэшъух"
 
-#: .\question\forms.py:14
+#: .\question\forms.py:15
 msgid "Текст вопроса"
 msgstr "Упч1эм имэхьан къетхы"
 
-#: .\question\forms.py:15
+#: .\question\forms.py:16
 msgid "Аудио (необязательно)"
 msgstr "Аудиор (ар хэмытми хъут)"
 
-#: .\question\forms.py:19
+#: .\question\forms.py:20
 msgid "Введите название вопроса"
 msgstr "Упч1эм ыц1э шъутхы"
 
-#: .\question\forms.py:23
+#: .\question\forms.py:24
 msgid "Введите текст вопроса"
 msgstr "Упч1эм имэхьан шъутхы"
 

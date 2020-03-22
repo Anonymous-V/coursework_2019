@@ -18,7 +18,7 @@
                 <li><a data-dialog="somedialog" class="trigger" href="#">{% trans 'Язык' %}</a></li>
                 {% if request.user.is_authenticated %}
                     <li><a class="smoothscroll" href="{% url 'index_page' %}#works" title="works">{% trans 'Задать вопрос' %}</a></li>
-                    <li><a class="smoothscroll" href="#">{{ request.user.username }}</a></li>
+                    <li><a class="" href="{% url 'dashboard' %}">{{ request.user.username }}</a></li>
                     <li><a href="{% url 'logout' %}">{% trans 'Выйти' %}</a></li>
                 {% else %}
                     <li><a class="smoothscroll" href="{% url 'index_page' %}#works" title="works">{% trans 'Войти' %}</a></li>
@@ -38,7 +38,7 @@
                 <li><a data-dialog="somedialog" class="trigger" href="#">{% trans 'Язык' %}</a></li>
                 {% if request.user.is_authenticated %}
                     <li><a href="{% url 'index_page' %}#works" title="works">{% trans 'Задать вопрос' %}</a></li>
-                    <li><a class="smoothscroll" href="#">{{ request.user.username }}</a></li>
+                    <li><a class="" href="{% url 'dashboard' %}">{{ request.user.username }}</a></li>
                     <li><a href="{% url 'logout' %}">{% trans 'Выйти' %}</a></li>
                 {% else %}
                     <li><a href="{% url 'index_page' %}#works" title="works">{% trans 'Войти' %}</a></li>

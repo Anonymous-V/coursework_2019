@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-10 21:08+0300\n"
-"PO-Revision-Date: 2019-01-09 10:35+0000\n"
+"POT-Creation-Date: 2019-11-24 15:07+0300\n"
+"PO-Revision-Date: 2019-11-24 15:12+0230\n"
 "Last-Translator: b'Anonym  <anonym@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -17,49 +17,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Translated-Using: django-rosetta 0.9.0\n"
+"X-Translated-Using: django-rosetta 0.9.3\n"
 
-#: .\account\forms.py:8 .\account\forms.py:37
+#: .\account\forms.py:9 .\account\forms.py:38
 msgid "Логин на сайте"
 msgstr "Login to website"
 
-#: .\account\forms.py:10
+#: .\account\forms.py:11
 msgid "Введите Ваш логин"
 msgstr "Enter your login"
 
-#: .\account\forms.py:13 .\account\forms.py:22
+#: .\account\forms.py:14 .\account\forms.py:23
 msgid "Пароль для входа"
 msgstr "Login password"
 
-#: .\account\forms.py:15
+#: .\account\forms.py:16
 msgid "Введите Ваш пароль"
 msgstr "Enter your password"
 
-#: .\account\forms.py:24
+#: .\account\forms.py:25
 msgid "Придумайте пароль не менее 6 символов"
 msgstr "Create a password of at least 6 characters"
 
-#: .\account\forms.py:27
+#: .\account\forms.py:28
 msgid "Повторите пароль"
 msgstr "Confirm password"
 
-#: .\account\forms.py:29
+#: .\account\forms.py:30
 msgid "Повторите пароль записанный выше"
 msgstr "Repeat password above"
 
-#: .\account\forms.py:38
+#: .\account\forms.py:39
 msgid "Как Вас зовут?"
 msgstr "What is your name?"
 
-#: .\account\forms.py:39
+#: .\account\forms.py:40
 msgid "Ваш Email"
 msgstr "Your Email"
 
-#: .\account\forms.py:50
+#: .\account\forms.py:51
 msgid "Иванов Иван Иванович"
 msgstr "Ivanov Ivan Ivanovich"
 
-#: .\account\forms.py:71
+#: .\account\forms.py:73
 msgid "Ваша фотография (необязательно)"
 msgstr "Your photo (optional)"
 
@@ -84,13 +84,12 @@ msgstr "Log in"
 
 #: .\account\templates\registration\login.html:12
 msgid "Еще нет аккаунта?"
-msgstr ""
+msgstr "No account yet?"
 
 #: .\account\templates\registration\login.html:12
-#, fuzzy
 #| msgid "Зарегистрироваться"
 msgid "Зарегистрируйтесь"
-msgstr "Registration"
+msgstr "Register"
 
 #: .\account\templates\registration\register.html:4
 msgid "Регистрация | HiNative"
@@ -119,25 +118,25 @@ msgstr "Log in"
 
 #: .\account\views.py:16
 msgid "Данная страница доступна только<br>авторизированным пользователям"
-msgstr ""
+msgstr "This page is only available to < br>authorized users"
 
 #: .\account\views.py:27
 msgid "Отключенный аккаунт"
-msgstr ""
+msgstr "Disabled account"
 
 #: .\account\views.py:30
 msgid "Проверьте правильность введенных Вами данных"
-msgstr ""
+msgstr "Check that the data you entered is correct"
 
-#: .\blog\forms.py:13
+#: .\blog\forms.py:16
 msgid "Комментарий к вопросу"
 msgstr "Comment on the question"
 
-#: .\blog\forms.py:14
+#: .\blog\forms.py:17
 msgid "Аудиофайл"
 msgstr "Audio"
 
-#: .\blog\forms.py:19
+#: .\blog\forms.py:22
 msgid "Ваш комментарий"
 msgstr "Your comment"
 
@@ -177,15 +176,24 @@ msgstr "Add a comment"
 msgid "Отправить"
 msgstr "Send"
 
-#: .\blog\templates\blog\single_question.html:169
+#: .\blog\templates\blog\single_question.html:152
+#| msgid "Без ответа"
+msgid "Лучший ответ"
+msgstr "Best answer"
+
+#: .\blog\templates\blog\single_question.html:163
+#| msgid "Отправить"
+msgid "нравится"
+msgstr "like"
+
+#: .\blog\templates\blog\single_question.html:190
 msgid "Пока еще никто не прокомментировал этот вопрос"
 msgstr "No one has commented on this question yet"
 
-#: .\blog\views.py:73
-#, fuzzy
+#: .\blog\views.py:80
 #| msgid "Ваш аккаунт был успешно создан"
 msgid "Ваш комментарий был успешно добавлен"
-msgstr "Your account has been successfully created"
+msgstr "Your comment was successfully added"
 
 #: .\index\templates\index\lists.html:23
 msgid "Задай свой вопрос на сайте"
@@ -209,30 +217,30 @@ msgid ""
 "При помощи HiNative вы можете задавать вопросы как о английском, так и о "
 "русском языках, и получать ответы от настоящих их носителей."
 msgstr ""
-"With HiNative, you can ask questions about both English and Russian, and get "
-"answers from their real carriers."
+"With HiNative, you can ask questions about both English and Russian, and get"
+" answers from their real carriers."
 
-#: .\question\forms.py:12
+#: .\question\forms.py:13
 msgid "Название вопроса"
 msgstr "The name of the question"
 
-#: .\question\forms.py:13 .\templates\includes\modal_window_language.html:10
+#: .\question\forms.py:14 .\templates\includes\modal_window_language.html:10
 msgid "Выберите язык"
 msgstr "Choose language"
 
-#: .\question\forms.py:14
+#: .\question\forms.py:15
 msgid "Текст вопроса"
 msgstr "Question text"
 
-#: .\question\forms.py:15
+#: .\question\forms.py:16
 msgid "Аудио (необязательно)"
 msgstr "Audio (optional)"
 
-#: .\question\forms.py:19
+#: .\question\forms.py:20
 msgid "Введите название вопроса"
 msgstr "Enter the name of the question"
 
-#: .\question\forms.py:23
+#: .\question\forms.py:24
 msgid "Введите текст вопроса"
 msgstr "Enter question text"
 
@@ -253,10 +261,10 @@ msgid "Вопрос был успешно добавлен на сайт"
 msgstr "The question has been successfully added to the site"
 
 #: .\question\views.py:20
-#, fuzzy, python-brace-format
+#, python-brace-format
 #| msgid "Вопрос был успешно добавлен на сайт"
 msgid "Вопрос <a href=\"{0}\">{1}</a> был успешно добавлен"
-msgstr "The question has been successfully added to the site"
+msgstr "Question <a href=\"{0}\">{1}</a> was successfully added"
 
 #: .\templates\blog-single.html:65
 msgid "Ответы"
@@ -293,16 +301,14 @@ msgid "Выйти"
 msgstr "Log out"
 
 #: .\templates\includes\modal_window_language.html:18
-#, fuzzy
 #| msgid "Перейти"
 msgid "Переводы"
-msgstr "Go to"
+msgstr "Translations"
 
 #: .\templates\includes\modal_window_language.html:19
-#, fuzzy
 #| msgid "Отправить"
 msgid "Добавить"
-msgstr "Send"
+msgstr "To add"
 
 #: .\templates\includes\modal_window_language.html:21
 msgid "Закрыть"
@@ -330,8 +336,8 @@ msgstr "Last questions asked"
 
 #: .\templates\index.html:74
 msgid ""
-"Здесь опубликованы последние заданные вопросы наших пользователей. И ты тоже "
-"можешь в этом поучаствовать. Ведь это абсолютно бесплатно! Присоединяйся "
+"Здесь опубликованы последние заданные вопросы наших пользователей. И ты тоже"
+" можешь в этом поучаствовать. Ведь это абсолютно бесплатно! Присоединяйся "
 "скорее."
 msgstr ""
 "Here are the latest questions asked by our users. And you too can "
